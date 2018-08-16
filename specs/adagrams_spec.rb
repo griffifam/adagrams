@@ -81,15 +81,15 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
     #   expect(score_word("XXXXXXXXX")).must_equal 80
     # end
   # end
-#
-#   describe 'highest_score_from method' do
-#     it 'returns a hash that contains the word and score of best word in an array' do
-#       words = ['X', 'XX', 'XXX', 'XXXX']
-#       best_word = highest_score_from words
-#
-#       expect(best_word[:word]).must_equal 'XXXX'
-#       expect(best_word[:score]).must_equal 32
-#     end
+
+  describe 'highest_score_from method' do
+    it 'returns a hash that contains the word and score of best word in an array' do
+      words = ['X', 'XX', 'XXX', 'XXXX']
+      best_word = highest_score_from words
+
+      expect(best_word[:word]).must_equal 'XXXX'
+      expect(best_word[:score]).must_equal 32
+    end
 #
 #     it 'accurately finds best scoring word even if not sorted' do
 #       words = ['XXX', 'XXXX', 'XX', 'X']
@@ -168,5 +168,5 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 #       expect(best_word[:word]).must_equal words.first
 #       expect(best_word[:score]).must_equal 18
 #     end
-#   end
+  end
 # end
