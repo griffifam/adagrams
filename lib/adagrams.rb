@@ -1,3 +1,9 @@
+words_created = []
+in_progress = true
+
+while in_progress
+  in_progress = false
+
 def draw_letters()
   letters =
   ["a", "a", "a", "a", "a", "a", "a", "a", "a", "b", "b", "c", "c", "d", "d", "d", "d", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "f", "f", "g", "g", "g", "h", "h", "i", "i", "i", "i", "i", "i", "i", "i", "i", "j", "k", "l", "l", "l", "l", "m", "m", "n", "n", "n", "n", "n", "n", "o", "o", "o", "o", "o", "o", "o", "o", "p", "p", "q", "r", "r", "r", "r", "r", "r", "s", "s", "s", "s", "t", "t", "t", "t", "t", "t", "u", "u", "u", "u", "v", "v", "x", "y", "y", "z"]
@@ -17,7 +23,10 @@ def draw_letters()
   return hand_drawn
 end
 
+
+
 def uses_available_letters?(input, letters_drawn_input)
+
   input_array = []
   input.length.times do |i|
     input_array << input[i]
@@ -39,9 +48,20 @@ def uses_available_letters?(input, letters_drawn_input)
     end
   end
 
-  # puts testing_array
+
+#   word_hash = {}
+#   if testing_array.all? == true
+#     word_hash[:word] = input
+#     word_hash[:score] = score_word(input)
+#     words_created << word_hash
+#   end
+#
+# puts "#{word_hash}"
+# puts "#{words_created}"
    return testing_array.all?
 end
+
+
 
 def score_word(word)
 
@@ -85,7 +105,10 @@ def score_word(word)
   return total
 end
 
+def highest_score_from(words)
 
+return winning_word
+end
 # letters_in_hand = draw_letters
 # print "Here are your letters:\n#{letters_in_hand}\n"
 # print users_hand
@@ -95,9 +118,25 @@ print letters_taken
 
 print "What is your word creation: "
 user_input = gets.chomp.upcase
+strings_of_input = []
+strings_of_input << user_input
 
 x = uses_available_letters?(user_input, letters_taken)
 puts "#{x}"
 
 word_sum = score_word(user_input)
-print word_sum
+# print word_sum
+
+
+puts "Would you like to draw again?"
+close_program = gets.chomp
+
+if close_program == "yes" || close_program == "YES" || close_program == "Yes" ||close_program == "y" || close_program == "Y"
+  in_progress = true
+else
+  puts "The word with the highest score was #{key} with #{value} points."
+  puts "Thanks for playing. Goodbye!"
+  in_progress = false
+end
+
+end
